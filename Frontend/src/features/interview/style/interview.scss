@@ -1,0 +1,139 @@
+.interview-page {
+    --background: #090d18;
+    --sidebar: #0d1220;
+    --panel: #111827;
+    --line: rgba(143, 158, 191, 0.16);
+    --text: #f3f5fb;
+    --muted: #8994aa;
+    --accent: #f2498d;
+    --accent-soft: rgba(242, 73, 141, 0.13);
+    min-height: 100svh;
+    padding: 1rem;
+    box-sizing: border-box;
+    background: radial-gradient(circle at 54% -12%, #18223a 0, var(--background) 43%);
+    color: var(--text);
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+
+    .interview-layout {
+        display: grid;
+        grid-template-columns: 208px minmax(0, 1fr) 270px;
+        min-height: calc(100svh - 2rem);
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 1rem;
+        background: var(--panel);
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+    }
+
+    .interview-sidebar {
+        display: flex;
+        flex-direction: column;
+        padding: 1.8rem 1rem 1.2rem;
+        border-right: 1px solid var(--line);
+        background: var(--sidebar);
+    }
+
+    .report-brand { display: flex; align-items: center; gap: 0.65rem; color: var(--text); font-size: 0.86rem; font-weight: 700; }
+    .brand-mark { display: grid; place-items: center; width: 1.9rem; height: 1.9rem; border: 1px solid rgba(242, 73, 141, 0.42); border-radius: 0.55rem; background: var(--accent-soft); color: var(--accent); font-size: 1.1rem; }
+    .sidebar-label { margin: 4.5rem 0 0.7rem 0.7rem; color: #68738a; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; }
+    .report-nav { display: grid; gap: 0.35rem; }
+    .report-nav button { display: flex; align-items: center; gap: 0.65rem; width: 100%; padding: 0.72rem 0.7rem; border: 1px solid transparent; border-radius: 0.6rem; background: transparent; color: var(--muted); text-align: left; cursor: pointer; font: inherit; font-size: 0.75rem; transition: 160ms ease; }
+    .report-nav button:hover { color: var(--text); background: rgba(255, 255, 255, 0.035); }
+    .report-nav button.is-active { border-color: rgba(242, 73, 141, 0.28); background: var(--accent-soft); color: #ff83b2; }
+    .nav-indicator { width: 0.35rem; height: 0.35rem; border-radius: 50%; background: #4d586d; }
+    .is-active .nav-indicator { background: var(--accent); box-shadow: 0 0 9px var(--accent); }
+    .nav-arrow { margin-left: auto; color: #5d687d; font-size: 1.05rem; line-height: 1; }
+    .download-resume-button { display: flex; align-items: center; justify-content: center; gap: 0.55rem; width: 100%; margin-top: auto; padding: 0.72rem 0.65rem; border: 1px solid rgba(242, 73, 141, 0.42); border-radius: 0.65rem; background: linear-gradient(105deg, rgba(242, 73, 141, 0.92), rgba(139, 67, 225, 0.92)); color: #fff; cursor: pointer; font: inherit; font-size: 0.68rem; font-weight: 700; line-height: 1.35; text-align: left; box-shadow: 0 8px 20px rgba(190, 54, 146, 0.18); transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease; }
+    .download-resume-button:hover:not(:disabled) { transform: translateY(-2px); filter: brightness(1.08); box-shadow: 0 11px 24px rgba(190, 54, 146, 0.32); }
+    .download-resume-button:focus-visible { outline: 2px solid #ff83b2; outline-offset: 3px; }
+    .download-resume-button:disabled { cursor: wait; opacity: 0.72; }
+    .download-icon, .download-spinner { display: inline-flex; flex: 0 0 auto; width: 1.15rem; height: 1.15rem; }
+    .download-icon svg, .download-spinner svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+    .download-spinner { animation: resume-spin 900ms linear infinite; }
+    .download-resume-error { margin: 0.65rem 0 0; color: #ff9aaa; font-size: 0.65rem; line-height: 1.4; }
+
+    .interview-main { min-width: 0; padding: 2.25rem clamp(1.5rem, 4vw, 3.4rem); background: linear-gradient(135deg, rgba(17, 24, 39, 0.98), rgba(13, 19, 31, 0.99)); }
+    .report-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding-bottom: 1.55rem; border-bottom: 1px solid var(--line); }
+    .eyebrow, .content-kicker, .panel-label, .detail-label, .item-label { margin: 0 0 0.5rem; color: #738099; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; }
+    h1, h2, p { margin-top: 0; }
+    h1 { margin-bottom: 0.45rem; font-size: clamp(1.5rem, 2.8vw, 2.15rem); letter-spacing: -0.035em; }
+    .header-copy { margin: 0; color: var(--muted); font-size: 0.76rem; }
+    .mobile-score { display: none; }
+    .content-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin: 1.75rem 0 0.9rem; }
+    .content-kicker { margin-bottom: 0.3rem; color: var(--accent); }
+    .content-heading h2 { margin: 0; font-size: 0.98rem; }
+    .count-badge { padding: 0.38rem 0.62rem; border: 1px solid var(--line); border-radius: 0.4rem; color: var(--muted); font-size: 0.64rem; white-space: nowrap; }
+    .report-content { min-width: 0; }
+    .question-list, .roadmap-list { display: grid; gap: 0.65rem; }
+    .question-item, .roadmap-item { border: 1px solid var(--line); border-radius: 0.65rem; background: rgba(21, 30, 48, 0.7); }
+    .question-item.is-expanded { border-color: rgba(242, 73, 141, 0.36); box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14); }
+    .question-toggle { display: grid; grid-template-columns: 2.1rem minmax(0, 1fr) 1rem; align-items: center; gap: 0.8rem; width: 100%; padding: 0.85rem 0.9rem; border: 0; background: transparent; color: var(--text); text-align: left; cursor: pointer; font: inherit; }
+    .question-number, .day-number { display: grid; place-items: center; width: 1.85rem; height: 1.85rem; border-radius: 0.48rem; background: var(--accent-soft); color: #ff83b2; font-size: 0.64rem; font-weight: 700; }
+    .question-title { color: #e9edf6; font-size: 0.78rem; line-height: 1.45; }
+    .question-chevron { color: var(--muted); font-size: 1.1rem; transition: transform 160ms ease, color 160ms ease; }
+    .is-expanded .question-chevron { color: var(--accent); transform: rotate(180deg); }
+    .question-details { display: grid; gap: 0.8rem; margin: 0 0.9rem 0.9rem 3.8rem; padding-top: 0.8rem; border-top: 1px solid var(--line); }
+    .detail-label { margin-bottom: 0.3rem; color: var(--accent); }
+    .question-details p, .roadmap-item p { margin-bottom: 0; color: var(--muted); font-size: 0.73rem; line-height: 1.58; }
+    .roadmap-item { display: grid; grid-template-columns: 2.1rem 1fr; gap: 0.85rem; padding: 0.9rem; }
+    .roadmap-item h2 { margin-bottom: 0.35rem; color: var(--text); font-size: 0.88rem; }
+    .item-label { margin-bottom: 0.3rem; color: var(--accent); }
+
+    .skills-panel { padding: 2.25rem 1.15rem; border-left: 1px solid var(--line); background: #0d1422; }
+    .score-panel { padding-bottom: 1.65rem; border-bottom: 1px solid var(--line); text-align: center; }
+    .score-panel .panel-label { text-align: left; }
+    .score-ring { display: grid; place-items: center; width: 126px; height: 126px; margin: 1rem auto; border-radius: 50%; background: conic-gradient(var(--accent) var(--score), #283246 0); position: relative; }
+    .score-ring::before { position: absolute; inset: 0.48rem; border-radius: 50%; background: #0d1422; content: ""; }
+    .score-ring div { position: relative; display: flex; align-items: baseline; gap: 0.2rem; }
+    .score-ring strong { font-size: 1.95rem; line-height: 1; }
+    .score-ring span { color: var(--muted); font-size: 0.6rem; }
+    .score-panel h2 { margin-bottom: 0.45rem; color: var(--text); font-size: 0.82rem; line-height: 1.35; }
+    .score-description { margin: 0; color: var(--muted); font-size: 0.66rem; line-height: 1.5; }
+    .gaps-panel { padding-top: 1.65rem; }
+    .panel-title { display: flex; align-items: center; justify-content: space-between; }
+    .panel-title .panel-label { margin: 0; }
+    .panel-title > span { display: grid; place-items: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--accent-soft); color: #ff83b2; font-size: 0.6rem; }
+    .skill-list { display: grid; gap: 0.5rem; margin-top: 0.9rem; }
+    .skill-chip { display: flex; align-items: center; justify-content: space-between; gap: 0.45rem; padding: 0.6rem 0.62rem; border: 1px solid var(--line); border-left: 2px solid #d7a43f; border-radius: 0.45rem; background: rgba(255, 255, 255, 0.025); color: #dce2ee; font-size: 0.66rem; line-height: 1.35; }
+    .skill-chip small { color: #d7a43f; font-size: 0.52rem; text-transform: uppercase; }
+    .skill-chip.severity-high { border-left-color: #f26a77; }
+    .skill-chip.severity-high small { color: #f26a77; }
+    .skill-chip.severity-low { border-left-color: #5fc18b; }
+    .skill-chip.severity-low small { color: #5fc18b; }
+    .empty-report { display: grid; place-items: center; min-height: 280px; text-align: center; }
+    .empty-report h2 { margin: 0.7rem 0 0.35rem; font-size: 0.95rem; }
+    .empty-report p, .panel-empty { color: var(--muted); font-size: 0.75rem; }
+    .empty-icon { color: var(--accent); font-size: 1.8rem; }
+    @keyframes resume-spin { to { transform: rotate(360deg); } }
+
+    @media (prefers-reduced-motion: reduce) {
+        .download-spinner { animation: none; }
+        .download-resume-button { transition: none; }
+    }
+
+    @media (max-width: 980px) {
+        .interview-layout { grid-template-columns: 190px minmax(0, 1fr); }
+        .skills-panel { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 2rem; border-top: 1px solid var(--line); border-left: 0; }
+        .score-panel { padding: 0 2rem 0 0; border-right: 1px solid var(--line); border-bottom: 0; }
+        .gaps-panel { padding-top: 0; }
+    }
+
+    @media (max-width: 620px) {
+        padding: 0;
+        .interview-layout { display: block; min-height: 100svh; border-radius: 0; border-width: 0; }
+        .interview-sidebar { padding: 1.15rem; border-right: 0; border-bottom: 1px solid var(--line); }
+        .sidebar-label { margin: 1.35rem 0 0.6rem; }
+        .report-nav { display: flex; gap: 0.35rem; overflow-x: auto; }
+        .report-nav button { flex: 0 0 auto; width: auto; padding: 0.58rem 0.6rem; }
+        .report-nav button span:nth-child(2) { white-space: nowrap; }
+        .nav-arrow { display: none; }
+        .download-resume-button { margin-top: 1rem; }
+        .interview-main { padding: 1.6rem 1rem; }
+        .mobile-score { display: grid; gap: 0.18rem; color: var(--muted); font-size: 0.58rem; text-align: right; }
+        .mobile-score strong { color: var(--accent); font-size: 1.05rem; }
+        .skills-panel { display: block; }
+        .score-panel { padding: 0 0 1.6rem; border-right: 0; border-bottom: 1px solid var(--line); }
+        .gaps-panel { padding-top: 1.6rem; }
+        .question-details { margin-left: 0.9rem; }
+    }
+}
