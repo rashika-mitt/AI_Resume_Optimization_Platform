@@ -244,3 +244,34 @@ AI_Resume_Optimization_Platform/
 │   └── vite.config.js
 │
 └── README.md
+
+
+## Screenshots
+
+### Login
+
+![Login Page](Screenshots/login.png)
+
+### Register
+
+![Register Page](Screenshots/register.png)
+
+### Home Dashboard
+
+![Home Dashboard](Screenshots/home.png)
+
+### Interview History
+
+![Interview History](Screenshots/interview-history.png)
+
+### Interview Report
+
+![Interview Report](Screenshots/interview-report.png)
+
+### 7-Day Preparation Roadmap
+
+![Preparation Roadmap](Screenshots/roadmap.png)
+
+### AI Generated Resume
+
+![AI Generated Resume](Screenshots/ai-resume.png)
