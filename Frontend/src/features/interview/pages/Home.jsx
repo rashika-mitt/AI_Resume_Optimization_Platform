@@ -45,6 +45,33 @@ const SparkleIcon = () => (
     </svg>
 )
 
+const AnalysisIcon = () => (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 19.25V12M10 19.25V6M16 19.25v-4M22 19.25V3.75" />
+    </svg>
+)
+
+const QuestionsIcon = () => (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 5.25h14v10.5H9l-4 3v-13.5Z" />
+        <path d="M9 9.25h6M9 12.25h3" />
+    </svg>
+)
+
+const GapIcon = () => (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 3.75 19 7.5v9L12 20.25 5 16.5v-9l7-3.75Z" />
+        <path d="M12 8.25v4.5M12 16.25h.01" />
+    </svg>
+)
+
+const RoadmapIcon = () => (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 5.25h14M5 12h14M5 18.75h14" />
+        <path d="m8 3.5-3 1.75 3 1.75M16 10.25l3 1.75-3 1.75M8 17l-3 1.75 3 1.75" />
+    </svg>
+)
+
 const loadingMessages = [
     "Reading your resume...",
     "Analyzing your profile...",
@@ -143,6 +170,14 @@ const Home = () => {
             <div className="home-orbit home-orbit-right" aria-hidden="true" />
 
             <div className="home-content">
+                <nav className="home-nav" aria-label="Primary navigation">
+                    <a className="home-brand" href="/" aria-label="AI Interview Prep home">
+                        <span className="brand-symbol" aria-hidden="true"><SparkleIcon /></span>
+                        <span>AI Interview Prep</span>
+                    </a>
+                    <span className="home-nav-status"><span aria-hidden="true" />Preparation workspace</span>
+                </nav>
+
                 <header className="home-header">
                     <span className="header-sparkle"><SparkleIcon /></span>
                     <h1>Prepare <strong>Smarter</strong>, Interview <strong>Better</strong></h1>
@@ -205,7 +240,7 @@ const Home = () => {
                                 <span className={loading ? "loading-sparkle" : "button-sparkle"}>
                                     <SparkleIcon />
                                 </span>
-                                <span>{loading ? "Generating Your Interview Report..." : "Generate Interview Report"}</span>
+                                <span>{loading ? "Generating Your Interview Report..." : "Generate Your Interview Report"}</span>
                                 <span className="button-arrow" aria-hidden="true">&#8594;</span>
                             </button>
                             {loading && (
@@ -224,6 +259,25 @@ const Home = () => {
                         </section>
                     </div>
                 </div>
+
+                <section className="feature-strip" aria-label="Preparation capabilities">
+                    <div className="feature-item feature-analysis">
+                        <span className="feature-icon"><AnalysisIcon /></span>
+                        <span><strong>AI-Powered Analysis</strong><small>Get detailed insights</small></span>
+                    </div>
+                    <div className="feature-item feature-questions">
+                        <span className="feature-icon"><QuestionsIcon /></span>
+                        <span><strong>Personalized Questions</strong><small>Practice with relevant questions</small></span>
+                    </div>
+                    <div className="feature-item feature-gaps">
+                        <span className="feature-icon"><GapIcon /></span>
+                        <span><strong>Skill Gap Detection</strong><small>Identify areas to improve</small></span>
+                    </div>
+                    <div className="feature-item feature-roadmap">
+                        <span className="feature-icon"><RoadmapIcon /></span>
+                        <span><strong>Structured Preparation</strong><small>Get a 7-day study plan</small></span>
+                    </div>
+                </section>
 
                 <section className="plans-section" aria-labelledby="plans-heading">
                     <div className="plans-heading">

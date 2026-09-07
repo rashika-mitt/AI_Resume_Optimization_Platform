@@ -1,10 +1,12 @@
 .home {
     --page-bg: #0d1423;
-    --panel: rgba(24, 38, 60, 0.76);
-    --panel-border: rgba(92, 126, 180, 0.28);
+    --panel: rgba(24, 38, 60, 0.78);
+    --panel-border: rgba(105, 137, 197, 0.28);
     --text: #f3f5fc;
     --muted: #8fa3c5;
     --blue: #6795ff;
+    --purple: #c17af9;
+    --pink: #fb5a9a;
 
     position: relative;
     isolation: isolate;
@@ -12,57 +14,98 @@
     min-height: 100svh;
     overflow: hidden;
     box-sizing: border-box;
-    padding: 1.25rem 2rem 1.75rem;
-    background: radial-gradient(circle at 50% 46%, #15233a 0, var(--page-bg) 65%);
+    padding: 1rem 2rem 2.2rem;
+    background:
+        radial-gradient(circle at 50% 13%, rgba(38, 59, 103, 0.52), transparent 34rem),
+        radial-gradient(circle at 5% 48%, rgba(94, 52, 173, 0.12), transparent 22rem),
+        var(--page-bg);
     color: var(--text);
     font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
 
     .home-content {
         position: relative;
         z-index: 1;
-        width: min(1024px, 100%);
+        width: min(1220px, 100%);
         margin: 0 auto;
     }
+
+    .home-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 3.2rem;
+        margin-bottom: 2.35rem;
+        padding: 0.35rem 0;
+        border-bottom: 1px solid rgba(105, 137, 197, 0.18);
+    }
+
+    .home-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        color: var(--text);
+        font-size: 0.84rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        text-decoration: none;
+    }
+
+    .brand-symbol {
+        display: grid;
+        place-items: center;
+        width: 1.85rem;
+        height: 1.85rem;
+        border: 1px solid rgba(117, 145, 255, 0.5);
+        border-radius: 0.58rem;
+        background: linear-gradient(145deg, rgba(103, 149, 255, 0.25), rgba(193, 122, 249, 0.22));
+        color: #b3c8ff;
+        box-shadow: 0 0 18px rgba(103, 149, 255, 0.13);
+    }
+
+    .brand-symbol svg { width: 1.05rem; height: 1.05rem; fill: currentColor; stroke: none; }
+    .home-nav-status { display: inline-flex; align-items: center; gap: 0.45rem; color: #8096bd; font-size: 0.68rem; }
+    .home-nav-status span { width: 0.4rem; height: 0.4rem; border-radius: 50%; background: #69d6a0; box-shadow: 0 0 10px rgba(105, 214, 160, 0.6); }
 
     .home-header {
         position: relative;
         text-align: center;
-        margin: 0 auto 2rem;
+        margin: 0 auto 1.55rem;
 
         h1 {
             margin: 0;
             color: var(--text);
-            font-size: clamp(1.9rem, 3.1vw, 2.75rem);
+            font-size: clamp(2.15rem, 4.2vw, 3.55rem);
             line-height: 1.15;
             letter-spacing: -0.04em;
             font-weight: 700;
 
-            strong:first-child { color: #7095ff; }
-            strong:last-child { color: #c17af9; }
+            strong:first-child { color: #7095ff; text-shadow: 0 0 24px rgba(112, 149, 255, 0.16); }
+            strong:last-child { color: #c17af9; text-shadow: 0 0 24px rgba(193, 122, 249, 0.16); }
         }
 
         p {
             margin-top: 0.55rem;
             color: #a8b8d3;
-            font-size: 0.98rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
     }
 
     .header-sparkle {
         position: absolute;
-        right: 1.5%;
-        top: 0.8rem;
+        right: 3%;
+        top: 0.35rem;
         color: #5c8fff;
         width: 1.45rem;
     }
 
     .interview-input-group {
         display: grid;
-        grid-template-columns: 1.36fr 1fr;
-        gap: 0.75rem;
+        grid-template-columns: minmax(0, 1.3fr) minmax(340px, 0.94fr);
+        gap: 1rem;
     }
 
-    .right { display: grid; gap: 0.75rem; }
+    .right { display: grid; gap: 1rem; }
 
     .input-card {
         position: relative;
@@ -70,14 +113,14 @@
         flex-direction: column;
         box-sizing: border-box;
         border: 1px solid var(--panel-border);
-        border-radius: 0.9rem;
-        background: linear-gradient(135deg, rgba(28, 46, 73, 0.87), rgba(17, 29, 48, 0.9));
-        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.15);
+        border-radius: 1rem;
+        background: linear-gradient(145deg, rgba(29, 48, 78, 0.86), rgba(17, 29, 48, 0.94));
+        box-shadow: 0 20px 46px rgba(0, 0, 0, 0.2), inset 0 1px rgba(255, 255, 255, 0.025);
     }
 
-    .job-card { min-height: 558px; padding: 1.6rem 1.4rem 1.2rem; }
-    .resume-card { min-height: 214px; padding: 1.55rem 1.4rem 1.25rem; }
-    .self-card { min-height: 332px; padding: 1.55rem 1.4rem 1.4rem; }
+    .job-card { min-height: 548px; padding: 1.4rem 1.4rem 1.1rem; }
+    .resume-card { min-height: 204px; padding: 1.3rem 1.35rem 1.1rem; }
+    .self-card { min-height: 328px; padding: 1.3rem 1.35rem 1.25rem; }
 
     .card-heading {
         display: flex;
@@ -106,10 +149,12 @@
         border-radius: 0.72rem;
         outline: none;
         resize: none;
-        background: rgba(13, 24, 41, 0.45);
+        background: rgba(10, 20, 36, 0.57);
         color: var(--text);
         font: inherit;
-        font-size: 0.93rem;
+        font-size: 0.9rem;
+        line-height: 1.55;
+        scrollbar-color: rgba(117, 145, 255, 0.55) transparent;
     }
 
     textarea::placeholder { color: #8ba0c1; }
@@ -124,15 +169,18 @@
         min-height: 78px;
         margin-top: 1rem;
         border-radius: 0.9rem;
-        background: linear-gradient(110deg, #edf3ff, #b9d7ff);
+        background: linear-gradient(110deg, #eaf0ff, #b8d4ff);
         color: #2143d5;
         cursor: pointer;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.26), 0 10px 24px rgba(96, 134, 227, 0.12);
+        transition: transform 180ms ease, filter 180ms ease, box-shadow 180ms ease;
         font-size: 0.97rem;
         font-weight: 700;
     }
 
     .file-label svg { width: 1.8rem; height: 1.8rem; stroke-width: 2.2; }
-    .file-label:hover { filter: brightness(1.06); }
+    .file-label:hover { transform: translateY(-2px); filter: brightness(1.06); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.38), 0 13px 28px rgba(96, 134, 227, 0.2); }
+    .file-label:focus-within { outline: 2px solid #788cff; outline-offset: 3px; }
     .file-note { margin-top: 0.55rem; color: #9cafd0; text-align: center; font-size: 0.75rem; }
 
     .self-card textarea { min-height: 140px; flex: 0 1 140px; }
@@ -151,7 +199,8 @@
         font: inherit;
         font-size: 0.95rem;
         font-weight: 700;
-        box-shadow: 0 10px 24px rgba(211, 35, 139, 0.24);
+        box-shadow: 0 12px 28px rgba(211, 35, 139, 0.3);
+        transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
     }
 
     .generate-btn:disabled { cursor: wait; opacity: 0.9; }
@@ -178,10 +227,39 @@
     .privacy-note { display: flex; align-items: center; justify-content: center; gap: 0.55rem; margin-top: 1.7rem; color: #8195b6; font-size: 0.76rem; }
     .privacy-note svg { width: 1.2rem; height: 1.2rem; color: #6e87b2; }
 
+    .feature-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.65rem;
+        margin-top: 0.9rem;
+    }
+
+    .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        min-width: 0;
+        min-height: 3.25rem;
+        padding: 0.7rem 0.75rem;
+        border: 1px solid rgba(92, 126, 180, 0.2);
+        border-radius: 0.75rem;
+        background: rgba(18, 30, 50, 0.45);
+    }
+
+    .feature-item > span:last-child { display: grid; gap: 0.22rem; min-width: 0; }
+    .feature-item strong { overflow: hidden; color: #dce5f7; font-size: 0.68rem; text-overflow: ellipsis; white-space: nowrap; }
+    .feature-item small { overflow: hidden; color: #8096bd; font-size: 0.61rem; text-overflow: ellipsis; white-space: nowrap; }
+    .feature-icon { display: inline-flex; flex: 0 0 auto; width: 1.25rem; height: 1.25rem; }
+    .feature-icon svg { width: 100%; height: 100%; }
+    .feature-analysis .feature-icon { color: #70a4ff; }
+    .feature-questions .feature-icon { color: #d187ff; }
+    .feature-gaps .feature-icon { color: #ff7ead; }
+    .feature-roadmap .feature-icon { color: #6ed7b0; }
+
     .plans-section {
         scroll-margin-top: 1rem;
-        margin-top: 2.5rem;
-        padding-top: 1.8rem;
+        margin-top: 1.45rem;
+        padding-top: 1.25rem;
         border-top: 1px solid rgba(92, 126, 180, 0.2);
     }
 
@@ -190,12 +268,12 @@
         align-items: flex-end;
         justify-content: space-between;
         gap: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.8rem;
 
         h2 {
             margin: 0.3rem 0 0;
             color: var(--text);
-            font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+            font-size: clamp(1.2rem, 2.5vw, 1.55rem);
             line-height: 1.2;
         }
     }
@@ -322,21 +400,31 @@
 
     @media (prefers-reduced-motion: reduce) {
         .loading-sparkle, .status-pulse, .progress-bar, .plan-skeleton span { animation: none; }
-        .plan-card { transition: none; }
+        .plan-card, .generate-btn, .file-label { transition: none; }
     }
 
     @media (max-width: 760px) {
         padding: 1.5rem 1rem;
+        .home-nav { margin-bottom: 2.7rem; }
         .header-sparkle { display: none; }
         .home-header { margin-bottom: 1.5rem; }
         .home-header p { font-size: 0.82rem; }
         .interview-input-group { grid-template-columns: 1fr; }
         .job-card { min-height: 430px; }
         .plans-grid { grid-template-columns: 1fr; }
+        .feature-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .privacy-note { margin-top: 1.25rem; font-size: 0.68rem; }
     }
 
     @media (min-width: 761px) and (max-width: 900px) {
         .plans-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .interview-input-group { grid-template-columns: minmax(0, 1.2fr) minmax(290px, 0.9fr); }
+        .feature-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 480px) {
+        .home-nav-status { display: none; }
+        .home-header h1 { font-size: 2rem; }
+        .feature-strip { grid-template-columns: 1fr; }
     }
 }
