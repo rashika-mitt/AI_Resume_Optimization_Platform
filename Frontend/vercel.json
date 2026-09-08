@@ -1,16 +1,12 @@
 {
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api",
-      "destination": "https://ai-resume-optimization-platform.onrender.com/api"
+      "src": "/api/(.*)",
+      "dest": "https://ai-resume-optimization-platform.onrender.com/api/$1"
     },
     {
-      "source": "/api/:path*",
-      "destination": "https://ai-resume-optimization-platform.onrender.com/api/:path*"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
