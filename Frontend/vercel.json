@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/api",
+      "destination": "https://ai-resume-optimization-platform.onrender.com/api"
+    },
+    {
       "source": "/api/:path*",
       "destination": "https://ai-resume-optimization-platform.onrender.com/api/:path*"
     },
