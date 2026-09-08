@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://ai-resume-optimization-platform.onrender.com/api/auth",
+    baseURL: "/api/auth",
     withCredentials: true,
 });
 
