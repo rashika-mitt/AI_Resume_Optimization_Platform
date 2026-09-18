@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">AI Resume Optimizer</title>
+  <rect width="64" height="64" rx="14" fill="#17324d"/>
+  <path fill="#f4f7f9" d="M18 10h20l10 10v34H18V10Zm18 3v10h10L36 13Z"/>
+  <path fill="#2f9e9e" d="M24 30h18v4H24v-4Zm0 8h18v4H24v-4Zm0 8h11v4H24v-4Z"/>
+  <path fill="#e7b75c" d="m47 31 1.8 4.2L53 37l-4.2 1.8L47 43l-1.8-4.2L41 37l4.2-1.8L47 31Z"/>
+</svg>
